@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Testbed and codebase for LLM-based node classification algorithms.">
+  <meta name="keywords" content="Large Language Models, Graph Neural Networks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLMNodeBed</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <style>
+  .findings-box {
+    border: 2px solid #d0d9e0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: inline-block;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    margin-bottom: 25pt;
+  }
+
+  .findings-box .title {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-right: 3pt;
+    color: #615ced; 
+  }
+
+  .findings-box .content {
+    text-align: start;
+  }
+
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://wxxshirley.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/WxxShirley/GNN4TaskPlan">
+            GNN4TaskPlan
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A Comprehensive Analysis on LLM-based Node Classification Algorithms</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://wxxshirley.github.io/">Xixi Wu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/yifeishen/">Yifei Shen</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Fangzhou_Ge1">Fangzhou Ge</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-knurggAAAAJ&hl=en">Caihua Shan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yzjiao.github.io/">Yizhu Jiao</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xgsun.mysxl.cn/">Xiangguo Sun</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www1.se.cuhk.edu.hk/~hcheng/">Hong Cheng</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Microsoft Research Asia, </span>
+            <span class="author-block"><sup>3</sup>University of Illinois Urbana-Champaign</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/images/LLMNodeBed_arXiv.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/WxxShirley/LLMNodeBed"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📝 Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Node classification is a fundamental task in graph analysis, with broad applications across various fields. 
+            Recent breakthroughs in Large Language Models (LLMs) have enabled LLM-based approaches for this task. 
+            Although many studies demonstrate the impressive performance of LLM-based methods, the lack of clear design guidelines may hinder their practical application.  
+            In this work, we aim to establish such guidelines through a fair and systematic comparison of these algorithms. As a first step, we developed <b style="color:#615ced;">LLMNodeBed</b>, a comprehensive codebase and testbed for node classification using LLMs. 
+            It includes ten datasets, eight LLM-based algorithms, and three learning paradigms, and is designed for easy extension with new methods and datasets. 
+            Subsequently, we conducted extensive experiments, training and evaluating over 2,200 models, to determine the key settings (e.g., learning paradigms and homophily) and components (e.g., model size) that affect performance. 
+            Our findings uncover <b style="color:#615ced;">eight novel insights</b>, e.g., (1) LLM-based methods can significantly outperform traditional methods in a semi-supervised setting, while the advantage is marginal in a supervised setting; 
+            (2) Graph Foundation Models can beat open-source LLMs but still fall short of strong LLMs like GPT-4o in a zero-shot setting. 
+            We hope that the release of LLMNodeBed, along with our insights, will facilitate reproducible research and inspire future studies in this field.
+          </p>
+        </div>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Overview -->
+<section class="section" id="Overview">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">🌟 Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            📊 <b style="color:#615ced;">A Testbed </b>We release LLMNodeBed, a PyG-based testbed designed to facilitate reproducible and rigorous research in LLM-based node classification algorithms. The initial release includes ten datasets, eight LLM-based algorithms, and three learning configurations. LLMNodeBed allows for easy addition of new algorithms or datasets, and a single command to run all experiments, and to automatically generate all tables included in this work.
+          </p>
+          <p>
+            🔍 <b style="color:#615ced">Comprehensive Experiments </b>By training and evaluating over 2,200 models, we analyzed how the learning paradigm, homophily, language model type and size, and prompt design impact the performance of each algorithm category.
+          </p>
+          <p>
+            📚 <b style="color:#615ced">Insights and Tips </b>Detailed experiments were conducted to analyze each influencing factor. We identified the settings where each algorithm category performs best and the key components for achieving this performance. Our work provides intuitive explanations, practical tips, and insights about the strengths and limitations of each algorithm category.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- Framework -->
+<section class="section" id="Framework">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-fifths">
+          <h2 class="title is-3">📊 LLMNodeBed</h2>
+          <img src="static/images/full.jpg" width="120%">
+          <div class="content has-text-justified">
+            <p>
+              <b style="color:#615ced;">Datasets</b> LLMNodeBed comprises ten datasets spanning the academic, web link, social, and E-Commerce domains. These datasets vary significantly in scale, ranging from thousands of nodes to millions of edges, and exhibit differing levels of homophily.
+            </p>
+            <p>
+              <b style="color:#615ced;">Baselines</b> LLMNodeBed includes eight LLM-based baseline algorithms alongside classic methods. (1) LLM-as-Encoder: ENGINE and GNN w/ LLMEmb, (2) LLM-as-Reasoner: TAPE, (3) LLM-as-Predictor: LLM Instruction Tuning, GraphGPT, and LLaGA, (4) LLM Direct Inference with both Advanced Prompts and Enriched Prompts, (5) Graph Foundation Models: ZeroG
+            </p>
+            <p>
+              <b style="color:#615ced">Learning Paradigms</b> Baselines are evaluated under three learning configurations: Semi-supervised, Supervised, and Zero-shot. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+ </section>
+<!-- End Framework -->
+
+  <!-- Experiments -->
+  <section class="section" id="Experiments">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-fifths">
+          <h2 class="title is-3">🔍 Main Experiments</h2>
+          <div class="content has-text-justified">
+          </div>
+          <img src="static/images/exp_main.jpg" width="100%">
+          <div class="content has-text-justified">
+            <p>
+              The performance comparison under <b style="color:#615ced;">semi-supervised and supervised settings</b> measured by Accuracy (%), is reported above. 
+           </p>
+           <p>
+            📚 Our key takeaways are as follows:
+           </p>
+          </div>
+          <div class="findings-box">
+            <div style="display: flex; align-items: start;">
+              <span class="title">1</span>
+              <span class="content">Appropriately incorporating LLMs consistently improves the performance.</span> <br/>
+
+              <span class="title">2</span>
+              <span class="content">LLM-based methods provide greater improvements in semi-supervised settings than in supervised settings.</span> <br/>
+            
+              <span class="title">3</span>
+              <span class="content">LLM-as-Reasoner methods are highly effective when labels heavily depend on text.</span> <br/>
+
+              <span class="title">4</span>
+              <span class="content">LLM-as-Encoder methods balance computational cost and accuracy effectively.</span> <br/>
+            
+              <span class="title">5</span>
+              <span class="content" style="text-align: start;">LLM-as-Predictor methods are more effective when labeled data is abundant.</span>
+            </div>
+          </div> 
+
+
+          <img src="static/images/exp_zeroshot.jpg" width="90%">
+          <div class="content has-text-justified">
+            <p>
+              The performance comparison under <b style="color:#615ced;">zero-shot settings</b> measured by Accuracy (%) and Macro-F1 (%), is reported above. 
+            </p>
+            <p>
+              📚 Our key takeaways are as follows:
+             </p>
+          </div>
+          <div class="findings-box">
+            <div style="display: flex; align-items: start;">
+              <span class="title">6</span>
+              <span class="content">GFMs can outperform open-source LLMs but still fall short of strong LLMs like GPT-4o.</span> <br/>
+
+              <span class="title">7</span>
+              <span class="content">LLM direct inference can be improved by appropriately incorporating structural information.</span> <br/>
+              </div>
+          </div> 
+          
+          <img src="static/images/exp_encoder.jpg" width="100%">
+          <div class="content has-text-justified">
+            <p>
+              Comparison of <b style="color: #615ced;">LLM- and LM-as-Encoder</b> with Accuracy (%) reported under semi-supervised setting.
+            </p>
+          </div>
+          <div class="findings-box" style="width: 100%;">
+            <span class="title">📚</span>
+            <span class="content">LLM-as-Encoder significantly outperforms LMs in heterophilic graphs.</span>
+          </div> 
+          
+        </div>
+      </div>
+  </section>
+  <!-- End Experiments -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/images/LLMNodeBed_arXiv.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/WxxShirley/LLMNodeBed" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
