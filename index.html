@@ -105,7 +105,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">A Comprehensive Analysis on LLM-based Node Classification Algorithms</h1>
+          <h1 class="title is-1 publication-title">[ICML 2025] When Do LLMs Help With Node Classification? A Comprehensive Analysis</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://wxxshirley.github.io/">Xixi Wu</a><sup>1</sup>,</span>
@@ -138,7 +138,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./static/images/LLMGraphBench_arxiv.pdf"
+                <a href="./static/images/LLMGraphBench_ICML.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -165,6 +165,15 @@
                   <span>Code</span>
                   </a>
               </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/xxwu/LLMNodeBed" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="static/images/hf-logo.png" alt="Hugging Face Logo" style="width: 20px; height: 20px;"/>
+                </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
             </div>
 
           </div>
@@ -186,11 +195,11 @@
             Recent breakthroughs in Large Language Models (LLMs) have enabled LLM-based approaches for this task. 
             Although many studies demonstrate the impressive performance of LLM-based methods, the lack of clear design guidelines may hinder their practical application.  
             In this work, we aim to establish such guidelines through a fair and systematic comparison of these algorithms. As a first step, we developed <b style="color:#615ced;">LLMNodeBed</b>, a comprehensive codebase and testbed for node classification using LLMs. 
-            It includes ten datasets, eight LLM-based algorithms, and three learning paradigms, and is designed for easy extension with new methods and datasets. 
-            Subsequently, we conducted extensive experiments, training and evaluating over 2,200 models, to determine the key settings (e.g., learning paradigms and homophily) and components (e.g., model size) that affect performance. 
-            Our findings uncover <b style="color:#615ced;">eight novel insights</b>, e.g., (1) LLM-based methods can significantly outperform traditional methods in a semi-supervised setting, while the advantage is marginal in a supervised setting; 
+            It includes 10 homophilic datasets, 4 heterophilic datasets, 8 LLM-based algorithms, 8 classic baselines, and 3 learning paradigms. 
+            Subsequently, we conducted extensive experiments, training and evaluating over 2,700 models, to determine the key settings (e.g., learning paradigms and homophily) and components (e.g., model size and prompt) that affect performance. 
+            Our findings uncover <b style="color:#615ced;">8 insights</b>, e.g., (1) LLM-based methods can significantly outperform traditional methods in a semi-supervised setting, while the advantage is marginal in a supervised setting; 
             (2) Graph Foundation Models can beat open-source LLMs but still fall short of strong LLMs like GPT-4o in a zero-shot setting. 
-            We hope that the release of LLMNodeBed, along with our insights, will facilitate reproducible research and inspire future studies in this field.
+            We hope that the release of LLMNodeBed, along with our insights, will facilitate reproducible research and inspire future studies in this field. 
           </p>
         </div>
        
@@ -209,10 +218,10 @@
         <h2 class="title is-3">🌟 Overview</h2>
         <div class="content has-text-justified">
           <p>
-            📊 <b style="color:#615ced;">A Testbed </b>We release LLMNodeBed, a PyG-based testbed designed to facilitate reproducible and rigorous research in LLM-based node classification algorithms. The initial release includes <strong>ten datasets, eight LLM-based algorithms, and three learning configurations</strong>. LLMNodeBed allows for easy addition of new algorithms or datasets, and a single command to run all experiments, and to automatically generate all tables included in this work.
+            📊 <b style="color:#615ced;">A Testbed </b>We release LLMNodeBed, a PyG-based testbed designed to facilitate reproducible and rigorous research in LLM-based node classification algorithms. The initial release includes <strong>14 datasets, 8 LLM-based algorithms, 8 classic baselines, and 3 learning configurations</strong>. LLMNodeBed allows for easy addition of new algorithms or datasets, and a single command to run all experiments, and to automatically generate all tables included in this work.
           </p>
           <p>
-            🔍 <b style="color:#615ced">Comprehensive Experiments </b>By training and evaluating over 2,200 models, we analyzed how the learning paradigm, homophily, language model type and size, and prompt design impact the performance of each algorithm category.
+            🔍 <b style="color:#615ced">Comprehensive Experiments </b>By training and evaluating over 2,700 models, we analyzed how the learning paradigm, homophily, language model type and size, and prompt design impact the performance of each algorithm category.
           </p>
           <p>
             📚 <b style="color:#615ced">Insights and Tips </b>Detailed experiments were conducted to analyze each influencing factor. We identified the settings where each algorithm category performs best and the key components for achieving this performance. Our work provides <strong>intuitive explanations, practical tips, and insights</strong> about the strengths and limitations of each algorithm category.
@@ -231,10 +240,10 @@
           <img src="static/images/full.jpg" width="120%">
           <div class="content has-text-justified">
             <p>
-              <b style="color:#615ced;">Datasets</b> LLMNodeBed comprises <strong>ten datasets</strong> spanning the academic, web link, social, and E-Commerce domains. These datasets vary significantly in scale, ranging from thousands of nodes to millions of edges, and exhibit differing levels of homophily.
+              <b style="color:#615ced;">Datasets</b> LLMNodeBed comprises <strong>14 datasets</strong> spanning the academic, web link, social, and E-Commerce domains. These datasets vary significantly in scale, ranging from thousands of nodes to millions of edges, and exhibit differing levels of homophily.
             </p>
             <p>
-              <b style="color:#615ced;">Baselines</b> LLMNodeBed includes eight LLM-based baseline algorithms alongside classic methods. (1) LLM-as-Encoder: <strong>ENGINE</strong> and <strong>GNN w/ LLMEmb</strong>, (2) LLM-as-Reasoner: <strong>TAPE</strong>, (3) LLM-as-Predictor: LLM Instruction Tuning, <strong>GraphGPT</strong>, and <strong>LLaGA</strong>, (4) LLM Direct Inference with both <strong>Advanced Prompts</strong> and <strong>Enriched Prompts</strong>, (5) Graph Foundation Models: <strong>ZeroG</strong>
+              <b style="color:#615ced;">Baselines</b> LLMNodeBed includes 8 LLM-based baseline algorithms alongside 8 classic methods. (1) LLM-as-Encoder: <strong>ENGINE</strong> and <strong>GNN w. LLMEmb</strong>, (2) LLM-as-Explainer: <strong>TAPE</strong>, (3) LLM-as-Predictor: LLM Instruction Tuning, <strong>GraphGPT</strong>, and <strong>LLaGA</strong>, (4) LLM Direct Inference with both <strong>Advanced Prompts</strong> and <strong>Enriched Prompts</strong>, (5) Graph Foundation Models: <strong>ZeroG</strong>
             </p>
             <p>
               <b style="color:#615ced">Learning Paradigms</b> Baselines are evaluated under three learning configurations: Semi-supervised, Supervised, and Zero-shot. 
@@ -303,14 +312,9 @@
           </div> 
           
           <img src="static/images/exp_encoder.jpg" width="100%">
-          <div class="content has-text-justified">
-            <p>
-              Comparison of <b style="color: #615ced;">LLM-as-Encoder and LM-as-Encoder</b> with Accuracy (%) reported under semi-supervised setting.
-            </p>
-          </div>
           <div class="findings-box" style="width: 100%;">
             <span class="title">📚 Takeaway 8</span>
-            <span class="content">LLM-as-Encoder significantly outperforms LMs in <strong>heterophilic graphs</strong>.</span>
+            <span class="content">LLM-as-Encoder significantly outperforms LMs <strong>when graph structure is less informative about the labels, e.g., heterophilic ones.</strong>.</span>
           </div> 
           
         </div>
@@ -322,14 +326,13 @@
   <div class="container is-max-desktop content">
     <h2 class="title">🚩 Citation</h2>
     <p>Feel free to cite this work if you find it useful to you! </p>
-    <pre><code>@misc{wu2025llmnodebed,
-    title={A Comprehensive Analysis on LLM-based Node Classification Algorithms}, 
-    author={Xixi Wu and Yifei Shen and Fangzhou Ge and Caihua Shan and Yizhu Jiao and Xiangguo Sun and Hong Cheng},
-    year={2025},
-    eprint={2502.00829},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG},
-    url={https://arxiv.org/abs/2502.00829}, 
+    <pre><code>@inproceedings{wu2025llmnodebed,
+      title={When Do LLMs Help With Node Classification? A Comprehensive Analysis}, 
+      author={Xixi Wu and Yifei Shen and Fangzhou Ge and Caihua Shan and Yizhu Jiao and Xiangguo Sun and Hong Cheng},
+      year={2025},
+      booktitle={International Conference on Machine Learning},
+      organization={PMLR},
+      url={https://arxiv.org/abs/2502.00829}, 
 }</code></pre>
   </div>
 </section>
